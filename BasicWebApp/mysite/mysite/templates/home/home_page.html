@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block extra_css %}
+    <style>
+      body{
+        padding-top: 100px;
+      }
+    </style>
+{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="container">
+{% block content %}
+
+  {% image self.banner_image width-1500 as img %}
+
+  <center><h1 class="display-4">{{ self.banner_title }}</h1></center>
+  <center><div class="lead">
+    <h4>{{ self.banner_subtitle|richtext }}</h4>
+    <br>
+    <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+    <br><br><br>
+    <h3>To serve for a greater purpose of future animal protection</h3>
+  </div></center>
+
+
+{% endblock %}
+</div>
