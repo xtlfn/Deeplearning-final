@@ -2,3 +2,14 @@
 
   border-radius: 10px;
 }
+
+body {
+  background-image: url('/media/original_images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

@@ -29,7 +29,16 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}" style="background-image: url('/media/original_images/strip-background.png'); height: 100%;">
+        <body class="{% block body_class %}{% endblock %}"
+              style="
+                  background-image: url('/media/original_images/background.png');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: center center;
+                  height: 100vh;
+                  margin: 0;
+                  padding: 400;
+                  overflow-x: hidden;">
         {% wagtailuserbar %}
 
         <nav class="navbar navbar-expand-lg navbar-brown fixed-top" style="background-color: rgba(187, 118, 73, 0.9);">

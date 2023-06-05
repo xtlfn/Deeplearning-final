@@ -1,95 +1,184 @@
 {% extends "base.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 {% block extra_css %}
+<style>
+  body {
+    padding-top: 100px;
+  }
+
+  .container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .videoWrapper {
+    position: relative;
+    margin-right: 20px;
+    height: 100%;
+    flex: 1;
+  }
+
+  .videoWrapper iframe {
+    display: inline;
+    height: 450px;
+    width: 790px;
+    border: 2px solid #ccc;
+    position: relative;
+  }
+
+  .button-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .button-wrapper button {
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgba(187, 118, 73);
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button-wrapper button:disabled {
+    background-color: gray;
+  }
+
+  .button-wrapper button:focus {
+    background-color: rgba(137, 68, 23);
+  }
+
+  .button-wrapper button:hover {
+    background-color: rgba(237, 168, 123);
+  }
+
+  .button-wrapper button:active {
+    background-color: rgba(187, 118, 73);
+  }
+
+  .button-wrapper h4 {
+    margin-bottom: 10px;
+  }
+
+  .content-wrapper {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-wrapper .text {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  .transparent-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-wrapper">
+  <div class="content-wrapper transparent-box">
+    <div class="text">
+      <h1 class="display-4">{{ page.name_title }}</h1>
+      <p>{{ page.name_subtitle|richtext }}</p>
+    </div>
+  </div>
+
+  <div class="videoWrapper">
     <style>
-      body{
-        padding-top: 100px;
+      .videoWrapper iframe {
+        display: inline;
+        height: 450px;
+        width: 790px;
+        border: 2px solid #ccc;
+        position: relative;
       }
     </style>
-{% endblock %}
-{% block content %}
-{% load static wagtailcore_tags wagtailimages_tags %}
-<center><h1 class="display-4">{{ page.name_title }}</h1></center>
-<div>
-    <center><p>{{ page.name_subtitle|richtext }}</p></center>
-</div>
+    <iframe id="frame1" class="responsive-iframe" src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no"></iframe>
+  </div>
 
-<center>
-  <div class="container-fluid" style="height:100%; padding-top:3%; display: block; overflow: auto;">
-    <div class="row" style="padding-bottom:1%;">
-      <div class="col-4">
-        <button type="button" onclick="changeTheVariableStartNorm()" id="pushMe3" class="btn btn-primary" name="button3">Start Normal</button>
+  <div class="button-wrapper">
+    <div class="row" style="padding-bottom: 1%;">
+      <div class="col-12">
+        <button type="button" onclick="changeTheVariableStartNorm()" id="pushMe3" class="btn btn-primary" name="button3">Start Camera</button>
       </div>
-      <div class="col-4">
-        <button type="button" onclick="changeTheVariableStartAI()" id="pushMe5" class="btn btn-primary" name="button5">Start AI</button>
+    </div>
+    <div class="row" style="padding-bottom: 1%;">
+      <div class="col-12">
+        <button type="button" onclick="changeTheVariableStartAI()" id="pushMe5" class="btn btn-primary" name="button5">Start Detection</button>
       </div>
-      <div class="col-4">
+    </div>
+    <div class="row" style="padding-bottom: 1%;">
+      <div class="col-12">
         <button type="button" onclick="changeTheVariableStop()" id="pushMe4" class="btn btn-primary" name="button4" disabled>Stop</button>
       </div>
     </div>
-    <h4>If video does not load, click the below buttons:</h4>
-      <center>
-        <div style="margin-bottom:10px;">
-          <button type="button" id="ntbtn1" class="btn btn-primary" name="button" style="color:white" disabled>View in new tab</a>
-        </div>
-      </center>
-    <div class="videoWrapper">
-        <style>
-        .videoWrapper {
-          position=absolute;
-          height=100%;
-        }
-        .videoWrapper iframe {
-          display: inline;
-          height: 450px; width: 790px; border: 2px solid #ccc;
-          margin-bottom:200px;
-          position: relative;
-        }
-      </style>
-
-      <!-- <img id="frame1" style="-webkit-user-select: none;" src="../no_video/" width="800px" height="700px"> -->
-      <iframe id="frame1" class="responsive-iframe"  src="../no_video/" title="YouTube video player" frameborder="0" scrolling="no" ></iframe>
-
+    <div class="row" style="padding-bottom: 1%;">
+      <div class="col-12">
+        <h4>Click the below button if the video is unable to load</h4>
+      </div>
     </div>
+    <div class="row" style="padding-bottom: 1%;">
+      <div class="col-12">
+        <button type="button" id="ntbtn1" class="btn btn-primary" name="button" disabled>View in new tab</button>
+      </div>
+    </div>
+  </div>
 </div>
-</center>
 {% endblock %}
+
 {% block extra_js %}
-    <script type="text/javascript">
-      var url = "../no_video/"
-      document.getElementById("ntbtn1").addEventListener("click", function() {
-        window.open(url, "_blank");
-      });
-      function changeTheVariableStartNorm() {
-         var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
-         var a = "../camera_feed/";
-         iframevar1.src = a;
-         url = a;
-         document.getElementById('pushMe5').disabled = true;
-         document.getElementById('pushMe4').disabled = false;
-         document.getElementById('ntbtn1').disabled = false;
-      }
-      function changeTheVariableStartAI() {
-         var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
-         var a = "../camera_feed_AI/";
-         iframevar1.src = a;
-         url = a;
-         document.getElementById('pushMe3').disabled = true;
-         document.getElementById('pushMe4').disabled = false;
-         document.getElementById('ntbtn1').disabled = false;
-      }
-      function changeTheVariableStop() {
-         var iframevar1 = document.getElementById('frame1');
-         var nt1 = document.getElementById('ntbtn1');
-         var a = "../no_video/";
-         iframevar1.src = a;
-         url = a;
-         document.getElementById('pushMe5').disabled = false;
-         document.getElementById('pushMe3').disabled = false;
-         document.getElementById('pushMe4').disabled = true;
-         document.getElementById('ntbtn1').disabled = true;
-      }
-    </script>
+<script type="text/javascript">
+  var url = "../no_video/"
+  document.getElementById("ntbtn1").addEventListener("click", function() {
+    window.open(url, "_blank");
+  });
+
+  function changeTheVariableStartNorm() {
+    var iframevar1 = document.getElementById('frame1');
+    var nt1 = document.getElementById('ntbtn1');
+    var a = "../camera_feed/";
+    iframevar1.src = a;
+    url = a;
+    document.getElementById('pushMe5').disabled = true;
+    document.getElementById('pushMe4').disabled = false;
+    document.getElementById('ntbtn1').disabled = false;
+  }
+
+  function changeTheVariableStartAI() {
+    var iframevar1 = document.getElementById('frame1');
+    var nt1 = document.getElementById('ntbtn1');
+    var a = "../camera_feed_AI/";
+    iframevar1.src = a;
+    url = a;
+    document.getElementById('pushMe3').disabled = true;
+    document.getElementById('pushMe4').disabled = false;
+    document.getElementById('ntbtn1').disabled = false;
+  }
+
+  function changeTheVariableStop() {
+    var iframevar1 = document.getElementById('frame1');
+    var nt1 = document.getElementById('ntbtn1');
+    var a = "../no_video/";
+    iframevar1.src = a;
+    url = a;
+    document.getElementById('pushMe5').disabled = false;
+    document.getElementById('pushMe3').disabled = false;
+    document.getElementById('pushMe4').disabled = true;
+    document.getElementById('ntbtn1').disabled = true;
+  }
+</script>
 {% endblock %}
