@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b202530-dc37-4ac1-9490-19e9dbea3f8f" name="Changes" comment="1&#10;added sample image">
-      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/yoloinfertrial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/best.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/last.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/yolov5s.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/cam_app/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/cam_app/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/settings/base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
