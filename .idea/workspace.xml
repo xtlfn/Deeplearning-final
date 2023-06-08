@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b202530-dc37-4ac1-9490-19e9dbea3f8f" name="Changes" comment="1&#10;added sample image">
-      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/media/original_images/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/media/original_images/bb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/media/original_images/no_cam.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/best.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/last.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicWebApp/mysite/weights/yolov5s.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/static/css/mysite.css" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/static/css/mysite.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app/no_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app/no_video.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app/video2.html" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app/video2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app2/image.html" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/templates/cam_app2/image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/cam_app/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/cam_app/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/BasicWebApp/mysite/mysite/settings/base.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,20 +49,25 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Q6Gbbud11qY1MLHWi5TKZEiCWN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Git/Deeplearning-final&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Git/Deeplearning-final",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Git\Deeplearning-final\BasicWebApp\mysite" />
       <recent name="D:\Git\Deeplearning-final\BasicWebApp\mysite\media\original_images" />
       <recent name="D:\Git\UTS-DeepLearning-Final\Basic_Web_App\mysite\media\original_images" />
     </key>
@@ -102,6 +103,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1&#10;added sample image" />
     <option name="LAST_COMMIT_MESSAGE" value="1&#10;added sample image" />
   </component>
